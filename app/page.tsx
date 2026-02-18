@@ -50,6 +50,9 @@ export default function Home() {
             <ProjectCard key={p.name} {...p} />
           ))}
         </div>
+        <footer className="site-footer">
+          <p>Built by <a href="https://gusty.ch" target="_blank" rel="noopener noreferrer" className="footer-link">Gusty</a></p>
+        </footer>
       </section>
     </main>
   );

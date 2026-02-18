@@ -163,3 +163,25 @@
 .project-card:hover .project-card-link {
   opacity: 1;
 }
+
+/* ── Footer ── */
+
+.site-footer {
+  margin-top: 4rem;
+  text-align: center;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.footer-link {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.footer-link:hover {
+  color: #FFF176;
+  text-decoration: underline;
+}
