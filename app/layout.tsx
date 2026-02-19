@@ -22,9 +22,9 @@ const permanentMarker = Permanent_Marker({
 });
 
 export const metadata: Metadata = {
-  title: "Gusty, Designer & Writer | AI Engineer / AI Integrator",
-  description: "Portfolio of Gueney Usta, Designer, Writer, and AI Engineer",
-  metadataBase: new URL('https://gusty.ch'),
+  title: "Sihliconvalley",
+  description: "Local. Open. Accountable. Community projects near the Sihl.",
+  metadataBase: new URL('https://sihliconvalley.ch'),
 };
 
 export default function RootLayout({

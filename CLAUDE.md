@@ -1,18 +1,25 @@
-# CLAUDE.md — sihliconvalley.ch project
+# CLAUDE.md — sihliconvalley.ch
 
-## Git: README conflict on push
+## Project Identity
 
-The GitHub Actions bot (`update-activity-log.yml`) commits to `README.md` on every push. This causes a rebase conflict whenever we also touch `README.md`.
+- **Name:** Sihliconvalley
+- **Domain:** sihliconvalley.ch
+- **Repo:** github.com/wgusta/sihliconvalley
+- **Purpose:** Community project showcase site (Star Wars crawl intro, then project cards)
+- **Projects shown:** SihlHack (sihlhack.ch), LuckHack (luckhack.ch)
+- **NOT:** gusty.ch, not a personal portfolio, not Güney Usta's portfolio
 
-**Always resolve by keeping our version:**
+## Tech
 
-```bash
+Next.js 16, React 19, Tailwind 3, TypeScript. i18n (DE default, EN). Deployed on Vercel.
+
+## Git
+
+Remote: `origin → github.com/wgusta/sihliconvalley.git`
+
+GitHub Actions bot commits to README.md on every push. Resolve conflicts:
+```
 git pull --rebase
-# if conflict on README.md:
-git checkout --ours README.md
-git add README.md
-git rebase --continue
+git checkout --ours README.md && git add README.md && git rebase --continue
 git push
 ```
-
-If the commit doesn't touch `README.md`, `git pull --rebase && git push` is enough.
