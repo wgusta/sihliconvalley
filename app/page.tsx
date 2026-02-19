@@ -153,16 +153,9 @@ export default function Home() {
                   <h3 className="text-2xl md:text-3xl font-bold text-yellow-river font-terminal mb-3">
                     {t(`projects.${project.id}.title`)}
                   </h3>
-                  <p className="text-light-gray/80 font-terminal text-base md:text-lg leading-relaxed mb-4">
+                  <p className="text-light-gray/80 font-terminal text-base md:text-lg leading-relaxed">
                     {t(`projects.${project.id}.description`)}
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="text-xs font-terminal px-2 py-1 rounded bg-purple/20 text-mint-text/70">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                 </a>
               ))}
             </div>

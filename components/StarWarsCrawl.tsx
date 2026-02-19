@@ -10,7 +10,7 @@ interface StarWarsCrawlProps {
   onPhaseChange?: (phase: Phase) => void;
 }
 
-const SCROLL_DURATION = 20; // seconds for text to scroll through
+const SCROLL_DURATION = 24.8; // 24% slower than 20s
 
 export default function StarWarsCrawl({ onComplete, onPhaseChange }: StarWarsCrawlProps) {
   const { t } = useI18n();
@@ -91,12 +91,6 @@ export default function StarWarsCrawl({ onComplete, onPhaseChange }: StarWarsCra
           className="crawl-scroll-wrapper"
           style={{ '--scroll-duration': `${SCROLL_DURATION}s` } as React.CSSProperties}
         >
-          <h2
-            className="text-yellow-river font-bold font-terminal mb-10 md:mb-14 leading-none"
-            style={{ fontSize: 'clamp(4rem, 10vw, 10rem)' }}
-          >
-            {t('crawl.title')}
-          </h2>
           <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
             {t('crawl.p1')}
           </p>

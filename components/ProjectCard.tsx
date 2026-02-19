@@ -73,17 +73,6 @@ export default function ProjectCard({ project, onClick, activeFilter }: ProjectC
         {description}
       </p>
 
-      <div className="flex flex-wrap gap-2 relative z-10" role="list" aria-label="Project tags">
-        {project.tags.map((tag, index) => (
-          <span
-            key={index}
-            className="px-2 py-1 text-xs rounded font-terminal bg-purple/20 text-light-gray/90"
-            role="listitem"
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
     </article>
   );
 }
