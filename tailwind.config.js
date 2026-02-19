@@ -14,6 +14,12 @@ module.exports = {
         'brand-black': '#1A1A1A',
         'brand-white': '#FFFFFF',
         'off-white': '#F5F3E8',
+        'navy-bg': '#000000',
+        'purple': '#6B4C8A',
+        'red-dot': '#E63B2E',
+        'yellow-river': '#E0D54A',
+        'mint-text': '#5CE0B8',
+        'light-gray': '#cccccc',
       },
       fontFamily: {
         'stylish': ['Playfair Display', 'serif'],

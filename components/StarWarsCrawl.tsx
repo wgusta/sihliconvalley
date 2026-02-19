@@ -1,69 +1,116 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useI18n } from '@/lib/i18n';
+
+type Phase = 'logo-center' | 'logo-flying' | 'intro' | 'crawl' | 'done';
 
 interface StarWarsCrawlProps {
   onComplete: () => void;
+  onPhaseChange?: (phase: Phase) => void;
 }
 
-export default function StarWarsCrawl({ onComplete }: StarWarsCrawlProps) {
-  const [introVisible, setIntroVisible] = useState(false);
-  const [crawlStarted, setCrawlStarted] = useState(false);
+const SCROLL_DURATION = 20; // seconds for text to scroll through
+
+export default function StarWarsCrawl({ onComplete, onPhaseChange }: StarWarsCrawlProps) {
+  const { t } = useI18n();
+  const [phase, setPhase] = useState<Phase>('logo-center');
+  const [isDesktop, setIsDesktop] = useState(true);
 
   useEffect(() => {
-    const introTimer = setTimeout(() => setIntroVisible(true), 300);
-    const crawlTimer = setTimeout(() => setCrawlStarted(true), 1200);
-    const doneTimer = setTimeout(() => onComplete(), 13500);
-    return () => {
-      clearTimeout(introTimer);
-      clearTimeout(crawlTimer);
-      clearTimeout(doneTimer);
-    };
-  }, [onComplete]);
+    const mq = window.matchMedia('(min-width: 768px)');
+    setIsDesktop(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  useEffect(() => {
+    const timers: ReturnType<typeof setTimeout>[] = [];
+
+    if (!isDesktop) {
+      setPhase('intro');
+      onPhaseChange?.('intro');
+
+      timers.push(setTimeout(() => {
+        setPhase('crawl');
+        onPhaseChange?.('crawl');
+      }, 2500));
+
+      timers.push(setTimeout(() => {
+        setPhase('done');
+        onPhaseChange?.('done');
+        onComplete();
+      }, 2500 + (SCROLL_DURATION * 1000) + 500));
+    } else {
+      setPhase('logo-center');
+      onPhaseChange?.('logo-center');
+
+      timers.push(setTimeout(() => {
+        setPhase('logo-flying');
+        onPhaseChange?.('logo-flying');
+      }, 2500));
+
+      timers.push(setTimeout(() => {
+        setPhase('intro');
+        onPhaseChange?.('intro');
+      }, 4500));
+
+      timers.push(setTimeout(() => {
+        setPhase('crawl');
+        onPhaseChange?.('crawl');
+      }, 7000));
+
+      timers.push(setTimeout(() => {
+        setPhase('done');
+        onPhaseChange?.('done');
+        onComplete();
+      }, 7000 + (SCROLL_DURATION * 1000) + 500));
+    }
+
+    return () => timers.forEach(clearTimeout);
+  }, [isDesktop, onComplete, onPhaseChange]);
+
+  if (phase === 'done') return null;
 
   return (
     <div className="crawl-container">
-      {/* Intro line */}
-      <p
-        className="intro-line"
-        style={{ opacity: introVisible ? 1 : 0 }}
-      >
-        A LONG TIME AGO IN A VALLEY MUCH CLOSER TO HOME...
-      </p>
-
-      {/* Crawl */}
-      <div className="crawl-perspective">
+      {phase === 'intro' && (
         <div
-          className="crawl-text"
-          style={{ animationPlayState: crawlStarted ? 'running' : 'paused' }}
+          className="absolute inset-0 flex items-center justify-center z-10"
+          style={{ animation: 'introFade 2.5s ease-in-out forwards' }}
         >
-          <h1 className="crawl-title">SIHLICONVALLEY</h1>
-
-          <p>
-            Silicon Valley gave us infinite scroll and finite attention.
-            It gave us &ldquo;connecting the world&rdquo; while building walls between people.
-            It gave us disruption without asking what was worth keeping.
-          </p>
-
-          <p>
-            We are not here to disrupt.<br />
-            We are here to build.<br />
-            Slowly. Together. Near the Sihl.
-          </p>
-
-          <p>
-            Not venture-backed. Community-grown.<br />
-            Not scale-first. Human-first.<br />
-            Not move fast and break things.<br />
-            Build slow. Fix things. Stay.
-          </p>
-
-          <p>
-            These are the projects.<br />
-            Local. Open. Accountable.
+          <p className="text-mint-text font-terminal tracking-[0.15em] text-center px-6 md:px-12 uppercase leading-relaxed text-4xl md:text-6xl lg:text-7xl">
+            {t('crawl.intro')}
           </p>
         </div>
-      </div>
+      )}
+
+      {phase === 'crawl' && (
+        <div
+          className="crawl-scroll-wrapper"
+          style={{ '--scroll-duration': `${SCROLL_DURATION}s` } as React.CSSProperties}
+        >
+          <h2
+            className="text-yellow-river font-bold font-terminal mb-10 md:mb-14 leading-none"
+            style={{ fontSize: 'clamp(4rem, 10vw, 10rem)' }}
+          >
+            {t('crawl.title')}
+          </h2>
+          <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
+            {t('crawl.p1')}
+          </p>
+          <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
+            {t('crawl.p2')}
+          </p>
+          <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
+            {t('crawl.p3')}
+          </p>
+          <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center">
+            {t('crawl.p4')}
+          </p>
+        </div>
+      )}
     </div>
   );
 }

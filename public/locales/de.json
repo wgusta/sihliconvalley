@@ -1,0 +1,26 @@
+{
+  "crawl": {
+    "intro": "In einem Tal ganz in der Nähe, in einer nicht allzu fernen Zukunft...",
+    "title": "SIHLICONVALLEY",
+    "p1": "Das Silicon Valley gab uns endloses Scrollen und endliche Aufmerksamkeit. Es gab uns \"die Welt verbinden\" während es Mauern zwischen Menschen baute. Es gab uns Disruption, ohne zu fragen, was es wert war zu behalten.",
+    "p2": "Wir sind nicht hier, um zu disruptieren. Wir sind hier, um zu bauen. Langsam. Zusammen. An der Sihl.",
+    "p3": "Nicht risikokapitalfinanziert. Community-gewachsen. Nicht skalieren zuerst. Mensch zuerst. Nicht schnell bewegen und Dinge kaputt machen. Langsam bauen. Dinge reparieren. Bleiben.",
+    "p4": "Das sind die Projekte. Lokal. Offen. Verantwortlich."
+  },
+  "nav": {
+    "exploreProjects": "Projekte entdecken"
+  },
+  "footer": {
+    "builtIn": "Gebaut im"
+  },
+  "projects": {
+    "sihlhack": {
+      "title": "SihlHack",
+      "description": "Teilnehmergetriebene Energie-Hackathon-Plattform, auf der Hacker Zürichs industrielles Erbe erschliessen, um an dezentraler Energie, Compute und Resilienz zu innovieren."
+    },
+    "luckhack": {
+      "title": "LuckHack",
+      "description": "CTF-Statistik-Hackathon mit SSH-Terminalzugang. Teams lösen Wahrscheinlichkeits- und Statistikaufgaben in einer Terminalumgebung."
+    }
+  }
+}
