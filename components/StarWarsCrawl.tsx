@@ -87,22 +87,24 @@ export default function StarWarsCrawl({ onComplete, onPhaseChange }: StarWarsCra
       )}
 
       {phase === 'crawl' && (
-        <div
-          className="crawl-scroll-wrapper"
-          style={{ '--scroll-duration': `${SCROLL_DURATION}s` } as React.CSSProperties}
-        >
-          <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
-            {t('crawl.p1')}
-          </p>
-          <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
-            {t('crawl.p2')}
-          </p>
-          <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
-            {t('crawl.p3')}
-          </p>
-          <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center">
-            {t('crawl.p4')}
-          </p>
+        <div className="crawl-perspective">
+          <div
+            className="crawl-scroll-wrapper"
+            style={{ '--scroll-duration': `${SCROLL_DURATION}s` } as React.CSSProperties}
+          >
+            <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
+              {t('crawl.p1')}
+            </p>
+            <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
+              {t('crawl.p2')}
+            </p>
+            <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
+              {t('crawl.p3')}
+            </p>
+            <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center">
+              {t('crawl.p4')}
+            </p>
+          </div>
         </div>
       )}
     </div>

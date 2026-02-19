@@ -168,18 +168,42 @@
   background: transparent;
 }
 
+/* 3D perspective wrapper for Star Wars vanishing-point effect */
+.crawl-perspective {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  perspective: 400px;
+  overflow: hidden;
+}
+
+/* Gradient fade at top: text vanishes "into the distance" */
+.crawl-perspective::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, #000000 20%, transparent 100%);
+  pointer-events: none;
+  z-index: 10;
+}
+
 .crawl-scroll-wrapper {
   width: 90%;
   max-width: 900px;
   text-align: center;
   font-family: 'IBM Plex Mono', monospace;
+  transform-origin: 50% 100%;
   animation: scrollUp var(--scroll-duration, 18s) linear forwards;
-  transform: translateY(100vh);
 }
 
 @keyframes scrollUp {
-  0% { transform: translateY(100vh); }
-  100% { transform: translateY(-100%); }
+  0% { transform: rotateX(25deg) translateY(100vh); }
+  100% { transform: rotateX(25deg) translateY(-100%); }
 }
 
 /* Intro text fade */
