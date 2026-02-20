@@ -10,7 +10,7 @@ interface StarWarsCrawlProps {
   onPhaseChange?: (phase: Phase) => void;
 }
 
-const SCROLL_DURATION = 29.8; // 20% slower than previous 24.8s
+const SCROLL_DURATION = 35.8; // 20% slower than previous 29.8s
 
 export default function StarWarsCrawl({ onComplete, onPhaseChange }: StarWarsCrawlProps) {
   const { t } = useI18n();
@@ -92,25 +92,25 @@ export default function StarWarsCrawl({ onComplete, onPhaseChange }: StarWarsCra
             className="crawl-scroll-wrapper"
             style={{ '--scroll-duration': `${SCROLL_DURATION}s` } as React.CSSProperties}
           >
-            <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
+            <p className="text-mint-text font-terminal leading-relaxed text-3xl md:text-5xl lg:text-6xl text-center mb-8 md:mb-10">
               {t('crawl.p1')}
             </p>
-            <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
+            <p className="text-mint-text font-terminal leading-relaxed text-3xl md:text-5xl lg:text-6xl text-center mb-8 md:mb-10">
               {t('crawl.p2')}
             </p>
-            <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
+            <p className="text-mint-text font-terminal leading-relaxed text-3xl md:text-5xl lg:text-6xl text-center mb-8 md:mb-10">
               {t('crawl.p3')}
             </p>
-            <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
+            <p className="text-mint-text font-terminal leading-relaxed text-3xl md:text-5xl lg:text-6xl text-center mb-8 md:mb-10">
               {t('crawl.p4')}
             </p>
-            <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-32 md:mb-44">
+            <p className="text-mint-text font-terminal leading-relaxed text-3xl md:text-5xl lg:text-6xl text-center mb-32 md:mb-44">
               {t('crawl.p5')}
             </p>
-            <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-16 md:mb-20">
+            <p className="text-mint-text font-terminal leading-relaxed text-3xl md:text-5xl lg:text-6xl text-center mb-16 md:mb-20">
               {t('crawl.joke')}
             </p>
-            <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center">
+            <p className="text-mint-text font-terminal leading-relaxed text-3xl md:text-5xl lg:text-6xl text-center">
               {t('crawl.p6')}
             </p>
           </div>
