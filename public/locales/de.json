@@ -2,10 +2,11 @@
   "crawl": {
     "intro": "In einem Tal ganz in der Nähe, in einer nicht allzu fernen Zukunft...",
     "title": "SIHLICONVALLEY",
-    "p1": "Das Silicon Valley gab uns endloses Scrollen und endliche Aufmerksamkeit. Es gab uns \"die Welt verbinden\" während es Mauern zwischen Menschen baute. Es gab uns Disruption, ohne zu fragen, was es wert war zu behalten.",
-    "p2": "Wir sind nicht hier, um zu disruptieren. Wir sind hier, um zu bauen.",
-    "p3": "Kein Skalieren um jeden Preis, sondern Menschen zuerst. Kein schnelles Kaputt machen, sondern Bestehendes verbessern.",
-    "p4": "Das ist das Sihlicon Valley. Dinge, die bleiben. Das sind unsere Projekte."
+    "p1": "Das ist das Sihlicon Valley.",
+    "p2": "Wir sind im Sihltal und überall dort, wo die Sihl fliesst.",
+    "p3": "Und wo die Sihl nicht fliesst, werden wir sie mittels Umlenkung und viel Freiwilligenarbeit umleiten ...",
+    "joke": "hahaha lol nein",
+    "p4": "Wir haben Einiges vor. Das sind unsere Projekte."
   },
   "nav": {
     "exploreProjects": "Projekte entdecken"
