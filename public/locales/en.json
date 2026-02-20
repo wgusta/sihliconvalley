@@ -2,11 +2,13 @@
   "crawl": {
     "intro": "In a valley close to home, in the not so distant future...",
     "title": "SIHLICONVALLEY",
-    "p1": "This is the Sihlicon Valley.",
-    "p2": "We are in the Sihltal and everywhere the Sihl flows.",
-    "p3": "And where the Sihl does not flow, we will redirect it through diversion and a lot of volunteer work ...",
+    "p1": "Silicon Valley gave us infinite scroll and finite attention. It gave us \"connecting the world\" while building walls between people. It gave us disruption without asking what was worth keeping.",
+    "p2": "We are not here to disrupt. We are here to build.",
+    "p3": "Not scale-first, but human-first. Not moving fast and breaking things, but improving what exists.",
+    "p4": "This is the Sihlicon Valley. We are in the Sihltal and everywhere the Sihl flows.",
+    "p5": "And where the Sihl does not flow, we will redirect it through diversion and a lot of volunteer work ...",
     "joke": "hahaha lol no",
-    "p4": "We have things planned. These are our projects."
+    "p6": "We have things planned. These are our projects."
   },
   "nav": {
     "exploreProjects": "Explore projects"

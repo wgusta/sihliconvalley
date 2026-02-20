@@ -98,14 +98,20 @@ export default function StarWarsCrawl({ onComplete, onPhaseChange }: StarWarsCra
             <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
               {t('crawl.p2')}
             </p>
-            <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-32 md:mb-44">
+            <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
               {t('crawl.p3')}
+            </p>
+            <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-8 md:mb-10">
+              {t('crawl.p4')}
+            </p>
+            <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-32 md:mb-44">
+              {t('crawl.p5')}
             </p>
             <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center mb-16 md:mb-20">
               {t('crawl.joke')}
             </p>
             <p className="text-mint-text font-terminal leading-relaxed text-2xl md:text-4xl lg:text-5xl text-center">
-              {t('crawl.p4')}
+              {t('crawl.p6')}
             </p>
           </div>
         </div>
